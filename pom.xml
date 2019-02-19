@@ -97,6 +97,7 @@
         <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
         <maven-dependency-analyzer.version>1.11.1</maven-dependency-analyzer.version>
         <jacoco-maven-plugin.version>0.8.3</jacoco-maven-plugin.version>
+        <sonar-maven-plugin.version>3.6.0.1398</sonar-maven-plugin.version>
 
         <kotlin-maven-plugin.version>${kotlin.version}</kotlin-maven-plugin.version>
         <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
@@ -260,6 +261,11 @@
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>${jacoco-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>${sonar-maven-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>

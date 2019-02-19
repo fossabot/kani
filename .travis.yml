@@ -3,26 +3,25 @@ language: java
 dist: xenial
 sudo: false
 
-env:
-  global:
-    - CODACY_PROJECT_TOKEN=4a348ad412364b8c8512edd01b7e422f
-
 cache:
   directories:
     - $HOME/.m2
+    - $HOME/.sonar/cache
 
 jdk: openjdk11
 
-before_install:
-  - wget -O ~/codacy-coverage-reporter-assembly.jar https://github.com/codacy/codacy-coverage-reporter/releases/download/4.0.5/codacy-coverage-reporter-4.0.5-assembly.jar
-
+addons:
+  sonarcloud:
+    organization: kani
+    token:
+      secure: $SONAR_TOKEN
 
 install:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 script:
   - mvn test -B
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
 
 after_success:
-  - java -jar ~/codacy-coverage-reporter-assembly.jar report -l Java -r reports/target/site/jacoco-aggregate/jacoco.xml
   - bash <(curl -s https://codecov.io/bash)
