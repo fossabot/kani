@@ -23,7 +23,7 @@ install:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B
 
 script:
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+  - mvn sonar:sonar
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
