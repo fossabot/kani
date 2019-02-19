@@ -19,10 +19,10 @@ addons:
     token:
       secure: $SONAR_TOKEN
 
-install:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B
+install: true
 
 script:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B
   - mvn test -B
   - mvn sonar:sonar
 
