@@ -12,15 +12,15 @@
 
     <artifactId>reports</artifactId>
     <version>0.1</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>Reports</name>
     <description>Provides code coverage reports</description>
 
     <build>
         <plugins>
+            <!--This module must not be deployed-->
             <plugin>
-                <!--This module must not be deployed-->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
                 <configuration>
@@ -38,6 +38,21 @@
                         <phase>test</phase>
                         <goals>
                             <goal>report-aggregate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--Check dependency/plugin updates-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>display-dependency-updates</goal>
+                            <goal>display-plugin-updates</goal>
                         </goals>
                     </execution>
                 </executions>
