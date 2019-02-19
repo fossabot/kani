@@ -8,6 +8,9 @@ cache:
     - $HOME/.m2
     - $HOME/.sonar/cache
 
+git:
+  depth: false
+
 jdk: openjdk11
 
 addons:
@@ -17,7 +20,7 @@ addons:
       secure: $SONAR_TOKEN
 
 install:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B
 
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
