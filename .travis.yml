@@ -3,26 +3,20 @@ language: java
 dist: xenial
 sudo: false
 
-cache:
-  directories:
-    - $HOME/.m2
-    - $HOME/.sonar/cache
-
-git:
-  depth: false
-
 jdk: openjdk11
+
+cache:directories:
+  - $HOME/.m2
+  - $HOME/.sonar/cache
+
+git:depth: false
 
 addons:
   sonarcloud:
     organization: kani
-    token:
-      secure: $SONAR_TOKEN
+    token:secure: $SONAR_TOKEN
 
-install: true
-
-script:
-  - mvn install -B -V
+install: mvn install -B -V
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
