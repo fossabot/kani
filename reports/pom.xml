@@ -14,8 +14,8 @@
     <version>${project.parent.version}</version>
     <packaging>jar</packaging>
 
-    <name>AppLocker module</name>
-    <description>Provides file-based lock mechanism with notification support</description>
+    <name>Reports</name>
+    <description>Provides code coverage reports</description>
 
     <build>
         <plugins>

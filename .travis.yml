@@ -25,3 +25,4 @@ script:
 
 after_success:
   - java -jar ~/codacy-coverage-reporter-assembly.jar report -l Java -r reports/target/site/jacoco-aggregate/jacoco.xml
+  - bash <(curl -s https://codecov.io/bash)

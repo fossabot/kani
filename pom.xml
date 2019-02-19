@@ -10,6 +10,7 @@
 
     <name>Kani</name>
     <description>Youtube-dl graphical interface written in Kotlin with JavaFX</description>
+    <inceptionYear>2019</inceptionYear>
 
     <modules>
         <module>gui</module>
@@ -100,6 +101,13 @@
         <kotlin-maven-plugin.version>${kotlin.version}</kotlin-maven-plugin.version>
         <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
     </properties>
+
+    <scm>
+        <connection>scm:git:ssh://github.com/sanyarnd/kani</connection>
+        <developerConnection>scm:git:https://github.com/sanyarnd/kani</developerConnection>
+        <url>https://github.com/sanyarnd/kani</url>
+        <tag>HEAD</tag>
+    </scm>
 
     <build>
         <plugins>
