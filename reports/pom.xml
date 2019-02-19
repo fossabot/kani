@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>reports</artifactId>
-    <version>${project.parent.version}</version>
+    <version>0.1</version>
     <packaging>jar</packaging>
 
     <name>Reports</name>
@@ -49,17 +49,17 @@
         <dependency>
             <groupId>io.kani</groupId>
             <artifactId>applocker</artifactId>
-            <version>${project.parent.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>io.kani</groupId>
             <artifactId>gui</artifactId>
-            <version>${project.parent.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>io.kani</groupId>
             <artifactId>youtubedl</artifactId>
-            <version>${project.parent.version}</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>

@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>gui</artifactId>
-    <version>${project.parent.version}</version>
+    <version>0.1</version>
     <packaging>jar</packaging>
 
     <name>GUI module</name>
@@ -64,18 +64,18 @@
                 </configuration>
             </plugin>
 
-            <!-- Shaded package-->
-            <plugin>
-                <artifactId>maven-shade-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            &lt;!&ndash; Shaded package&ndash;&gt;-->
+<!--            <plugin>-->
+<!--                <artifactId>maven-shade-plugin</artifactId>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>shade</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
